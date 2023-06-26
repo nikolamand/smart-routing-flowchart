@@ -1,10 +1,4 @@
-import {
-  Component,
-  TemplateRef,
-  ViewChild,
-  ElementRef,
-  Renderer2,
-} from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
 import {
   NgFlowchartCanvasDirective,
   NgFlowchartStepRegistry,
@@ -30,6 +24,7 @@ export class AppComponent {
   options: NgFlowchart.Options = {
     stepGap: 40,
     rootPosition: 'TOP_CENTER',
+    zoom: { mode: 'MANUAL' },
   };
 
   isDisabled: boolean = false;
@@ -130,7 +125,7 @@ export class AppComponent {
     console.log('DROP:', dropEvent);
 
     const canDrop = this.checkIfCanDrop(dropEvent);
-    if(!canDrop) {
+    if (!canDrop) {
       this.snackbar.open('Invalid drop', 'Close', {
         duration: 3000,
       });
@@ -147,7 +142,10 @@ export class AppComponent {
       return true;
     }
 
-    if (droppedNodeType === 'payment-method' && parentNode === 'smart-routing') {
+    if (
+      droppedNodeType === 'payment-method' &&
+      parentNode === 'smart-routing'
+    ) {
       return true;
     }
 
@@ -212,6 +210,11 @@ export class AppComponent {
 
   onDelete(id: any) {
     this.canvas.getFlow().getStep(id).destroy(true);
+  }
+
+  onScaleChange($event: any) {
+    console.log('scale', $event.target.value);
+    this.canvas.setScale($event.target.value);
   }
 
   showDescriptionFor(index: number) {

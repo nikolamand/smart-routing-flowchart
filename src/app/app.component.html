@@ -71,6 +71,22 @@
           <option value="HORIZONTAL">Horizontal</option>
         </select>
       </div>
+
+      <div class="sub-section">
+        <label for="scale-slider" class="wide">Scale</label>
+        <input
+          type="range"
+          name="scale-slider"
+          id="scale-slider"
+          class="wide"
+          min="0.25"
+          max="2"
+          step="0.01"
+          value="1"
+          (change)="onScaleChange($event)"
+        />
+      </div>
+
     </section>
     <section>
       <button (click)="clearData()">Clear Flow</button>
