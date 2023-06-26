@@ -1,0 +1,70 @@
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #444;
+}
+
+.dialog-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mat-dialog-content div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mat-dialog-content label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.mat-dialog-content select {
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+button {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+button[mat-button]:first-of-type {
+  background-color: #bbb;
+}
+
+button[mat-button]:last-of-type {
+  background-color: #4CAF50; /* A green color */
+}
+
+button[mat-button]:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}

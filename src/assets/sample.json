@@ -1,0 +1,255 @@
+{
+  "root": {
+      "id": "s1686642744559",
+      "type": "smart-routing",
+      "data": {
+          "name": "Smart Routing"
+      },
+      "children": [
+          {
+              "id": "s1686642744329",
+              "type": "payment-method",
+              "data": {
+                  "name": "VISA"
+              },
+              "children": [
+                  {
+                      "id": "s1686642757070",
+                      "type": "currency",
+                      "data": {
+                          "name": "EUR"
+                      },
+                      "children": [
+                          {
+                              "id": "s1687764506959",
+                              "type": "payment-channel",
+                              "data": {
+                                  "type": "payment-channel",
+                                  "name": "Payment Channel",
+                                  "channels": [
+                                      {
+                                          "name": "ACH",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "Wire",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "SEPA",
+                                          "active": false
+                                      }
+                                  ]
+                              },
+                              "children": []
+                          }
+                      ]
+                  },
+                  {
+                      "id": "s1686642793171",
+                      "type": "currency",
+                      "data": {
+                          "name": "CAD"
+                      },
+                      "children": [
+                          {
+                              "id": "s1687764506959",
+                              "type": "payment-channel",
+                              "data": {
+                                  "type": "payment-channel",
+                                  "name": "Payment Channel",
+                                  "channels": [
+                                      {
+                                          "name": "ACH",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "Wire",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "SEPA",
+                                          "active": false
+                                      }
+                                  ]
+                              },
+                              "children": []
+                          }
+                      ]
+                  },
+                  {
+                      "id": "s1686642805912",
+                      "type": "currency",
+                      "data": {
+                          "name": "USD"
+                      },
+                      "children": [
+                          {
+                              "id": "s1687764506959",
+                              "type": "payment-channel",
+                              "data": {
+                                  "type": "payment-channel",
+                                  "name": "Payment Channel",
+                                  "channels": [
+                                      {
+                                          "name": "ACH",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "Wire",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "SEPA",
+                                          "active": false
+                                      }
+                                  ]
+                              },
+                              "children": []
+                          }
+                      ]
+                  },
+                  {
+                      "id": "s1686642818653",
+                      "type": "currency",
+                      "data": {
+                          "name": "GBP"
+                      },
+                      "children": [
+                          {
+                              "id": "s1687764506959",
+                              "type": "payment-channel",
+                              "data": {
+                                  "type": "payment-channel",
+                                  "name": "Payment Channel",
+                                  "channels": [
+                                      {
+                                          "name": "ACH",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "Wire",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "SEPA",
+                                          "active": false
+                                      }
+                                  ]
+                              },
+                              "children": []
+                          }
+                      ]
+                  }
+              ]
+          },
+          {
+              "id": "s1687503460934",
+              "type": "payment-method",
+              "data": {
+                  "name": "MasterCard"
+              },
+              "children": [
+                  {
+                      "id": "s1687503472101",
+                      "type": "currency",
+                      "data": {
+                          "name": "USD"
+                      },
+                      "children": [
+                          {
+                              "id": "s1687764506959",
+                              "type": "payment-channel",
+                              "data": {
+                                  "type": "payment-channel",
+                                  "name": "Payment Channel",
+                                  "channels": [
+                                      {
+                                          "name": "ACH",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "Wire",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "SEPA",
+                                          "active": false
+                                      }
+                                  ]
+                              },
+                              "children": []
+                          }
+                      ]
+                  },
+                  {
+                      "id": "s1687503489251",
+                      "type": "currency",
+                      "data": {
+                          "name": "CAD"
+                      },
+                      "children": [
+                          {
+                              "id": "s1687764506959",
+                              "type": "payment-channel",
+                              "data": {
+                                  "type": "payment-channel",
+                                  "name": "Payment Channel",
+                                  "channels": [
+                                      {
+                                          "name": "ACH",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "Wire",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "SEPA",
+                                          "active": false
+                                      }
+                                  ]
+                              },
+                              "children": []
+                          }
+                      ]
+                  },
+                  {
+                      "id": "s1687503482835",
+                      "type": "currency",
+                      "data": {
+                          "name": "GBP"
+                      },
+
+                "children": [
+                  {
+                      "id": "s1687764506959",
+                      "type": "payment-channel",
+                      "data": {
+                          "type": "payment-channel",
+                          "name": "Payment Channel",
+                          "channels": [
+                              {
+                                  "name": "ACH",
+                                  "active": false
+                              },
+                              {
+                                  "name": "Wire",
+                                  "active": true
+                              },
+                              {
+                                  "name": "SEPA",
+                                  "active": false
+                              }
+                          ]
+                      },
+                      "children": []
+                  }
+              ]
+                  }
+              ]
+          }
+      ]
+  },
+  "connectors": []
+}

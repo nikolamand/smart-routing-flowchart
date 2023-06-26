@@ -1,0 +1,42 @@
+.step {
+  /* common styles */
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  /* hover effect */
+  transform: scale(1.05);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.smart-routing-step {
+  background-color: #4a86e8;
+  border: 2px solid #4a86e8;
+  color: #fff;
+}
+
+.payment-method-step {
+  background-color: #ffd966;
+  border: 2px solid #ffd966;
+  color: #333;
+}
+
+.currency-step {
+  background-color: #6aa84f;
+  border: 2px solid #6aa84f;
+  color: #fff;
+}
+
+.payment-channel-step {
+  background-color: #ea9999;
+  border: 2px solid #ea9999;
+  color: #fff;
+}
+
+.step:active{
+  opacity: 0.4;
+}
