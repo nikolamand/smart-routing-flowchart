@@ -1,1 +1,12 @@
-<p>restrictions works!</p>
+<div class="step restrictions-step" #canvasContent>
+  <span>{{ data.name }}</span>
+  <button class="edit-button" (click)="editStep()">
+    <i class="fa-solid fa-pen-to-square"></i>
+  </button>
+
+  <div class="restrictions-list">
+    <div class="restriction" *ngFor="let restriction of data.restrictions">
+      <span>{{ restriction }}</span>
+    </div>
+  </div>
+</div>

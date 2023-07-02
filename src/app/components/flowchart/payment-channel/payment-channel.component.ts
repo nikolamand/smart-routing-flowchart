@@ -12,9 +12,13 @@ import {
   NgFlowchartStepComponent,
   NgFlowchartCanvasDirective,
 } from '@joelwenzel/ng-flowchart';
+import { Store } from '@ngrx/store';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { DialogComponent } from '../dialog/dialog.component';
+import { AppState } from 'src/app/store/flowchart.reducer';
+import { stepUpdated } from 'src/app/store/flowchart.actions';
 
 @Component({
   selector: 'app-payment-channel',
@@ -26,7 +30,7 @@ export class PaymentChannelComponent
   implements OnInit, OnDestroy, AfterViewInit, OnChanges
 {
   @ViewChild(NgFlowchartCanvasDirective)
-  paymentMethodCanvas!: NgFlowchartCanvasDirective;
+  paymentChannelCanvas!: NgFlowchartCanvasDirective;
 
   NODE_NAME = 'Payment Channel';
   nameChanged: boolean = false;
@@ -42,49 +46,76 @@ export class PaymentChannelComponent
     'FPS',
   ];
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, public snackbar: MatSnackBar, private store: Store<AppState>) {
     super();
   }
 
   override ngOnInit() {
     super.ngOnInit();
-    // Logic here, e.g. fetch data from an API
   }
 
   override ngAfterViewInit() {
     super.ngAfterViewInit();
-
-    if (this.data.type === 'payment-channel' && !this.data.channels){
-      this.dialog
-        .open(DialogComponent, {
-          data: {
-            type: 'select-many',
-            list: this.paymentChannels,
-            label: 'Payment Channel',
-            title: 'Select Payment Channel',
-          },
-
-          hasBackdrop: true,
-          width: '500px',
-        })
-        .afterClosed()
-        .subscribe((result: any) => {
-          this.setData(result);
-        });
-      }
   }
 
   ngOnDestroy() {
-    this.paymentMethodCanvas?.getFlow().clear();
+    this.paymentChannelCanvas?.getFlow().clear();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('changes', changes);
     this.canvas.reRender();
   }
 
   override canDrop(dropEvent: NgFlowchart.DropTarget): boolean {
-    return true;
+    console.log('dropEvent', dropEvent, ['currency', 'restrictions'].includes(dropEvent?.step?.type));
+    let canDrop = true;
+
+    if (!dropEvent) {
+      canDrop = false;
+    }
+
+    if (dropEvent?.position === 'ABOVE') {
+      canDrop = false;
+    }
+
+    if (
+      !['currency', 'restrictions'].includes(dropEvent?.step?.type) &&
+      dropEvent?.position === 'BELOW'
+    ) {
+      canDrop = false;
+    }
+
+    if (
+      ['RIGHT', 'LEFT'].includes(dropEvent?.position)
+    ) {
+      canDrop = false;
+    }
+
+    if (!canDrop) {
+      this.snackbar.open('Invalid drop', 'Close', {
+        duration: 3000,
+      });
+    }
+
+    if(canDrop) {
+      this.dialog.open(DialogComponent, {
+        data: {
+          type: 'select-many',
+          list: this.paymentChannels,
+          label: 'Payment Channel',
+          title: 'Select Payment Channel',
+        },
+
+        hasBackdrop: true,
+        width: '500px',
+      })
+      .afterClosed()
+      .subscribe((result: any) => {
+        this.setData(result);
+      });
+    }
+
+    return canDrop;
   }
 
   overridecanDeleteStep(): boolean {
@@ -97,6 +128,7 @@ export class PaymentChannelComponent
         return { name: item, active: false };
       });
       this.nameChanged = true;
+      this.store.dispatch(stepUpdated());
     } else {
       this.destroy();
     }

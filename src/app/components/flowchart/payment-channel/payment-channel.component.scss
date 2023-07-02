@@ -4,25 +4,16 @@
   border: 2px solid #ea9999;
   color: #fff;
 }
-.step {
+.payment-channel-step {
   display: flex;
   flex-direction: column;
-  margin: 15px;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
-.payment-channel-step {
-  margin-top: 15px;
-  padding: 10px;
-  background-color: #f3f3f3;
-  border-radius: 5px;
-}
-
 .payment-channel-step span {
-  font-size: 18px;
   font-weight: 500;
   color: #333;
 }
@@ -38,7 +29,6 @@
 }
 
 .channel span {
-  font-size: 16px;
   color: #555;
 }
 

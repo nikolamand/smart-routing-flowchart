@@ -1,0 +1,40 @@
+<div class="center-screen">
+  <h1 class="dialog-title" mat-dialog-title>{{ data?.title }}</h1>
+  <div class="mat-dialog-content" mat-dialog-content>
+    <form
+      [formGroup]="restrictionsForm"
+      (ngSubmit)="onSave()"
+      class="restrictions-form"
+    >
+      <mat-form-field class="full-width">
+        <mat-label>Min Amount</mat-label>
+        <input matInput formControlName="minAmount" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Max Amount</mat-label>
+        <input matInput formControlName="maxAmount" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Select Country</mat-label>
+        <mat-select formControlName="geolocation">
+          <mat-option *ngFor="let country of countries" [value]="country">
+            {{ country }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="mat-dialog-actions" mat-dialog-actions>
+        <button mat-button (click)="onCancel()">Cancel</button>
+        <button
+          mat-raised-button
+          [disabled]="restrictionsForm.invalid"
+          type="submit"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

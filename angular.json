@@ -65,11 +65,16 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "disableHostCheck": true,
             "production": {
               "browserTarget": "POC-smart-routing:build:production"
             },
             "development": {
+              "disableHostCheck": true,
               "browserTarget": "POC-smart-routing:build:development"
+            },
+            "options":{
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

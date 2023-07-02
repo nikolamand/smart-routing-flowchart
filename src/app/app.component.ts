@@ -6,11 +6,16 @@ import {
 } from '@joelwenzel/ng-flowchart';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Store } from '@ngrx/store';
+import { Actions } from '@ngrx/effects';
 
 import { SmartRoutingComponent } from './components/flowchart/smart-routing/smart-routing.component';
 import { PaymentMethodComponent } from './components/flowchart/payment-method/payment-method.component';
 import { CurrencyComponent } from './components/flowchart/currency/currency.component';
 import { PaymentChannelComponent } from './components/flowchart/payment-channel/payment-channel.component';
+import { RestrictionsComponent } from './components/flowchart/restrictions/restrictions.component';
+import { addStep, undo, redo, stepUpdated } from './store/flowchart.actions';
+import { AppState } from './store/flowchart.reducer';
 
 @Component({
   selector: 'app-root',
@@ -23,11 +28,9 @@ export class AppComponent {
   callbacks: NgFlowchart.Callbacks = {};
   options: NgFlowchart.Options = {
     stepGap: 40,
-    rootPosition: 'TOP_CENTER',
+    orientation: 'HORIZONTAL',
     zoom: { mode: 'MANUAL' },
   };
-
-  isDisabled: boolean = false;
 
   @ViewChild('normalStep')
   normalStepTemplate!: TemplateRef<any>;
@@ -48,7 +51,7 @@ export class AppComponent {
         },
       },
       description:
-        'Base node for smart routing, it can accept payment method nodes',
+        'Base node for smart routing, it can accept payment method nodes. \nOnly one smart routing node can be placed on the canvas. \nDrag and drop to add smart routing.',
     },
     {
       paletteName: 'Payment Method',
@@ -61,7 +64,7 @@ export class AppComponent {
         },
       },
       description:
-        'Base node for payment method, it can accept currency nodes, drag and drop to add payment method',
+        'Payment method node, it can accept currency nodes. \nFirst one must be placed on smart routing node, the rest are placed on the left/right side of the other payment method nodes. \nDrag and drop to add payment method',
     },
     {
       paletteName: 'Currency',
@@ -74,7 +77,7 @@ export class AppComponent {
         },
       },
       description:
-        'Base node for currency, it can accept restrictions nodes or payment channel nodes, drag and drop to add currency',
+        'Currency node, it can accept payment channel nodes. \nFirst one must be placed on payment method node, the rest are placed on the left/right side of the other currency nodes. \nDrag and drop to add currency',
     },
     {
       paletteName: 'Payment Channel',
@@ -87,7 +90,18 @@ export class AppComponent {
         },
       },
       description:
-        'Base node for payment channel, it is the last node in the tree so id does not accept any other nodes, drag and drop to add payment channel',
+        'Payment channel node, it can accept restrictions nodes. \nFirst one must be placed on currency node, the rest are placed on the left/right side of the other payment channel nodes. \nDrag and drop to add payment channel',
+    },
+    {
+      paletteName: 'Restrictions',
+      step: {
+        template: RestrictionsComponent,
+        type: 'restrictions',
+        data: {
+          type: 'restrictions',
+          name: 'Restrictions',
+        },
+      },
     },
   ];
 
@@ -99,11 +113,29 @@ export class AppComponent {
   constructor(
     private stepRegistry: NgFlowchartStepRegistry,
     private http: HttpClient,
-    private snackbar: MatSnackBar
+    private actions$: Actions,
+    private store: Store<AppState>,
+    private actionsSubject$: Actions,
   ) {
+    this.store.select('flowchart').subscribe((flowchartState) => {
+      const parsedJson = JSON.parse(flowchartState.current);
+
+      // Check if the current state exists
+      if (parsedJson) {
+        // Load the current state
+        this.canvas.getFlow().upload(parsedJson);
+      }
+    });
+    this.actionsSubject$
+      .subscribe((action: any) => {
+        if (action.type === '[Flowchart] Step Updated') {
+          const currentJson = this.canvas.getFlow().toJSON();
+          this.store.dispatch(addStep({ step: currentJson }));
+        }
+      });
+
     this.callbacks.onDropError = this.onDropError.bind(this);
     this.callbacks.onMoveError = this.onMoveError.bind(this);
-    this.callbacks.onDropStep = this.onDropStep.bind(this);
   }
 
   ngAfterViewInit() {
@@ -111,6 +143,7 @@ export class AppComponent {
     this.stepRegistry.registerStep('payment-method', PaymentMethodComponent);
     this.stepRegistry.registerStep('currency', CurrencyComponent);
     this.stepRegistry.registerStep('payment-channel', PaymentChannelComponent);
+    this.stepRegistry.registerStep('restrictions', RestrictionsComponent);
   }
 
   onDropError(error: NgFlowchart.DropError) {
@@ -121,46 +154,12 @@ export class AppComponent {
     console.log('ERROR move:', error);
   }
 
-  onDropStep(dropEvent: NgFlowchart.DropEvent) {
-    console.log('DROP:', dropEvent);
-
-    const canDrop = this.checkIfCanDrop(dropEvent);
-    if (!canDrop) {
-      this.snackbar.open('Invalid drop', 'Close', {
-        duration: 3000,
-      });
-      dropEvent.step.destroy();
-    }
-    console.log('canDrop:', canDrop);
-  }
-
-  checkIfCanDrop(dropEvent: NgFlowchart.DropEvent) {
-    const droppedNodeType = dropEvent.step.data.type;
-    const parentNode = dropEvent.parent?.data.type;
-
-    if (droppedNodeType === 'smart-routing' && !parentNode) {
-      return true;
-    }
-
-    if (
-      droppedNodeType === 'payment-method' &&
-      parentNode === 'smart-routing'
-    ) {
-      return true;
-    }
-
-    if (droppedNodeType === 'currency' && parentNode === 'payment-method') {
-      return true;
-    }
-
-    return false;
-  }
-
   showUpload() {
     this.http.get('assets/sample.json').subscribe((data) => {
       this.sampleJson = data;
       if (!this.sampleJson) return;
-      this.canvas.getFlow().upload(this.sampleJson);
+      //update steps based on sample json, this will automatically upload the flow with subscribtion to the store
+      this.store.dispatch(addStep({ step: JSON.stringify(this.sampleJson) }));
     });
   }
 
@@ -196,7 +195,7 @@ export class AppComponent {
   }
 
   onDisabledChange(event: any) {
-    this.isDisabled = event.target.checked;
+    this.disabled = event.target.checked;
   }
 
   onOrientationChange(event: any) {
@@ -213,7 +212,6 @@ export class AppComponent {
   }
 
   onScaleChange($event: any) {
-    console.log('scale', $event.target.value);
     this.canvas.setScale($event.target.value);
   }
 
@@ -223,5 +221,14 @@ export class AppComponent {
       return;
     }
     this.showDescription = index;
+  }
+
+  undo() {
+    this.store.dispatch(undo());
+    console.log('undo', this.store);
+  }
+
+  redo() {
+    this.store.dispatch(redo());
   }
 }

@@ -2,20 +2,24 @@
   <h1 class="dialog-title" mat-dialog-title>{{ data?.title }}</h1>
   <div class="mat-dialog-content" mat-dialog-content>
     <div *ngIf="data.type === 'select-one'">
-      <label for="selct-list">{{ data.label }}</label>
-      <select id="select-list" [(ngModel)]="selected">
-        <option *ngFor="let method of data.list" [value]="method">
-          {{ method }}
-        </option>
-      </select>
+      <mat-form-field class="full-width">
+        <mat-label>{{ data.label }}</mat-label>
+        <mat-select id="select-list" [(ngModel)]="selected">
+          <mat-option *ngFor="let method of data.list" [value]="method">
+            {{ method }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
     <div *ngIf="data.type === 'select-many'">
-      <label for="selct-list">{{ data.label }}</label>
-      <select id="select-list" [(ngModel)]="selected" multiple>
-        <option *ngFor="let method of data.list" [value]="method">
-          {{ method }}
-        </option>
-      </select>
+      <mat-form-field class="full-width">
+        <mat-label>{{ data.label }}</mat-label>
+        <mat-select id="select-list" [(ngModel)]="selected" multiple>
+          <mat-option *ngFor="let method of data.list" [value]="method">
+            {{ method }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
   </div>
   <div class="mat-dialog-actions" mat-dialog-actions>
