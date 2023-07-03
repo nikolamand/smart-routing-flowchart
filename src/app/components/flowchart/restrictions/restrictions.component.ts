@@ -109,18 +109,21 @@ export class RestrictionsComponent
       })
       .afterClosed()
       .subscribe((result: any) => {
-        this.setData(result);
+        console.log('result', result);
+        this.setRestrictions(result);
         this.store.dispatch(stepUpdated());
       });
   }
 
-  setData(result: any) {
+  setRestrictions(result: any) {
     if (result) {
       this.data = {
-        type: 'restrictions',
+        ...this.data,
         restrictions: result,
       };
-      this.canvas.reRender();
+      setTimeout(() => {
+        this.canvas.reRender();
+      }, 300);
     }
   }
 }

@@ -29,6 +29,10 @@
       <button (click)="showUpload()">Upload JSON</button>
     </section>
     <section>
+      <div class="sub-section ">
+        <button class="undo" (click)="undo()" [disabled]="currentFlow?.past?.length < 1"><i class="fa-solid fa-rotate-left"></i></button>
+        <button class="redo" (click)="redo()" [disabled]="currentFlow?.future?.length < 1"><i class="fa-solid fa-rotate-right"></i></button>
+      </div>
       <div class="sub-section">
         <label for="step-gap-select" class="wide">Step Gap</label>
         <select
@@ -87,11 +91,6 @@
         />
       </div>
 
-    </section>
-    <!--undo adn redo buttons-->
-    <section>
-      <button (click)="undo()">Undo</button>
-      <button (click)="redo()">Redo</button>
     </section>
     <section>
       <button (click)="clearData()">Clear Flow</button>

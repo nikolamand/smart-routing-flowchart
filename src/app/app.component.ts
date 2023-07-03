@@ -80,6 +80,18 @@ export class AppComponent {
         'Currency node, it can accept payment channel nodes. \nFirst one must be placed on payment method node, the rest are placed on the left/right side of the other currency nodes. \nDrag and drop to add currency',
     },
     {
+      paletteName: 'Restrictions',
+      step: {
+        template: RestrictionsComponent,
+        type: 'restrictions',
+        data: {
+          type: 'restrictions',
+          name: 'Restrictions',
+        },
+      },
+      description: 'Restrictions node, it can accept payment channel nodes. \nFirst one must be placed on payment method node, the rest are placed on the left/right side of the other restrictions nodes. \nDrag and drop to add restrictions',
+    },
+    {
       paletteName: 'Payment Channel',
       step: {
         template: PaymentChannelComponent,
@@ -90,18 +102,7 @@ export class AppComponent {
         },
       },
       description:
-        'Payment channel node, it can accept restrictions nodes. \nFirst one must be placed on currency node, the rest are placed on the left/right side of the other payment channel nodes. \nDrag and drop to add payment channel',
-    },
-    {
-      paletteName: 'Restrictions',
-      step: {
-        template: RestrictionsComponent,
-        type: 'restrictions',
-        data: {
-          type: 'restrictions',
-          name: 'Restrictions',
-        },
-      },
+        'Payment channel node, last node in tree. \nIt can be placed on currency node or restriction node if there is one. \nDrag and drop to add payment channel',
     },
   ];
 
@@ -109,6 +110,8 @@ export class AppComponent {
   canvas!: NgFlowchartCanvasDirective;
 
   disabled = false;
+
+  currentFlow: any;
 
   constructor(
     private stepRegistry: NgFlowchartStepRegistry,
@@ -118,12 +121,17 @@ export class AppComponent {
     private actionsSubject$: Actions,
   ) {
     this.store.select('flowchart').subscribe((flowchartState) => {
+      console.log('flowchartState', flowchartState);
       const parsedJson = JSON.parse(flowchartState.current);
 
+      this.currentFlow = flowchartState;
       // Check if the current state exists
       if (parsedJson) {
         // Load the current state
         this.canvas.getFlow().upload(parsedJson);
+      }
+      if(parsedJson === null && this.canvas) {
+        this.clearData();
       }
     });
     this.actionsSubject$

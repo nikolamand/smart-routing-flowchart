@@ -1,7 +1,24 @@
+.title{
+  display: flex;
+}
+
 .edit{
   &-button{
     background: none;
     border: none;
     cursor: pointer;
+  }
+}
+
+.restrictions-list{
+  div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    span{
+      display: inline-block;
+      white-space: nowrap;
+    }
   }
 }

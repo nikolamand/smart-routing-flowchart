@@ -1,12 +1,20 @@
 <div class="step restrictions-step" #canvasContent>
-  <span>{{ data.name }}</span>
-  <button class="edit-button" (click)="editStep()">
-    <i class="fa-solid fa-pen-to-square"></i>
-  </button>
+  <div class="title">
+    <span>{{ data.name }}</span>
+    <button class="edit-button" (click)="editStep()">
+      <i class="fa-solid fa-pen-to-square"></i>
+    </button>
+  </div>
 
   <div class="restrictions-list">
-    <div class="restriction" *ngFor="let restriction of data.restrictions">
-      <span>{{ restriction }}</span>
+    <div *ngIf="data?.restrictions">
+      <br/>
+      <span *ngIf="data.restrictions.minAmount"><b>Min Amount:</b> {{data.restrictions.minAmount}}</span>
+
+      <span *ngIf="data.restrictions.maxAmount"><b>Max Amount:</b> {{data.restrictions.maxAmount}}</span>
+
+      <span *ngIf="data.restrictions.geolocation"><b>Geolocation:</b> {{data.restrictions.geolocation}}</span>
     </div>
+
   </div>
 </div>

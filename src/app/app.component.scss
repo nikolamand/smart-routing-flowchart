@@ -46,6 +46,13 @@ section .wide {
 
 .sub-section {
   padding: 0.5em 0;
+
+  .undo{
+
+  }
+  .redo{
+    margin-left: 1rem;
+  }
 }
 
 select {

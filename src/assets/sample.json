@@ -7,6 +7,58 @@
       },
       "children": [
           {
+              "id": "s1688370561244",
+              "type": "payment-method",
+              "data": {
+                  "name": "American Express"
+              },
+              "children": [
+                  {
+                      "id": "s1688370572909",
+                      "type": "currency",
+                      "data": {
+                          "name": "EUR"
+                      },
+                      "children": [
+                          {
+                              "id": "s1688370579659",
+                              "type": "restrictions",
+                              "data": {
+                                  "type": "restrictions",
+                                  "name": "Restrictions",
+                                  "restrictions": {
+                                      "minAmount": "100",
+                                      "maxAmount": null,
+                                      "geolocation": null
+                                  }
+                              },
+                              "children": [
+                                  {
+                                      "id": "s1688370589427",
+                                      "type": "payment-channel",
+                                      "data": {
+                                          "type": "payment-channel",
+                                          "name": "Payment Channel",
+                                          "channels": [
+                                              {
+                                                  "name": "Wire",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "SEPA",
+                                                  "active": false
+                                              }
+                                          ]
+                                      },
+                                      "children": []
+                                  }
+                              ]
+                          }
+                      ]
+                  }
+              ]
+          },
+          {
               "id": "s1686642744329",
               "type": "payment-method",
               "data": {
@@ -21,27 +73,84 @@
                       },
                       "children": [
                           {
-                              "id": "s1687764506959",
-                              "type": "payment-channel",
+                              "id": "s1688369913497",
+                              "type": "restrictions",
                               "data": {
-                                  "type": "payment-channel",
-                                  "name": "Payment Channel",
-                                  "channels": [
-                                      {
-                                          "name": "ACH",
-                                          "active": false
-                                      },
-                                      {
-                                          "name": "Wire",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "SEPA",
-                                          "active": false
-                                      }
-                                  ]
+                                  "type": "restrictions",
+                                  "name": "Restrictions",
+                                  "restrictions": {
+                                      "minAmount": "100",
+                                      "maxAmount": "1000",
+                                      "geolocation": null
+                                  }
                               },
-                              "children": []
+                              "children": [
+                                  {
+                                      "id": "s1688369921481",
+                                      "type": "payment-channel",
+                                      "data": {
+                                          "type": "payment-channel",
+                                          "name": "Payment Channel",
+                                          "channels": [
+                                              {
+                                                  "name": "Wire",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "SWIFT",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "FedWire",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "FPS",
+                                                  "active": false
+                                              }
+                                          ]
+                                      },
+                                      "children": []
+                                  }
+                              ]
+                          },
+                          {
+                              "id": "s1688368740048",
+                              "type": "restrictions",
+                              "data": {
+                                  "type": "restrictions",
+                                  "name": "Restrictions",
+                                  "restrictions": {
+                                      "minAmount": "33",
+                                      "maxAmount": "88",
+                                      "geolocation": "Serbia"
+                                  }
+                              },
+                              "children": [
+                                  {
+                                      "id": "s1687764506959",
+                                      "type": "payment-channel",
+                                      "data": {
+                                          "type": "payment-channel",
+                                          "name": "Payment Channel",
+                                          "channels": [
+                                              {
+                                                  "name": "ACH",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "Wire",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "SEPA",
+                                                  "active": false
+                                              }
+                                          ]
+                                      },
+                                      "children": []
+                                  }
+                              ]
                           }
                       ]
                   },
@@ -220,32 +329,31 @@
                       "data": {
                           "name": "GBP"
                       },
-
-                "children": [
-                  {
-                      "id": "s1687764506959",
-                      "type": "payment-channel",
-                      "data": {
-                          "type": "payment-channel",
-                          "name": "Payment Channel",
-                          "channels": [
-                              {
-                                  "name": "ACH",
-                                  "active": false
+                      "children": [
+                          {
+                              "id": "s1687764506959",
+                              "type": "payment-channel",
+                              "data": {
+                                  "type": "payment-channel",
+                                  "name": "Payment Channel",
+                                  "channels": [
+                                      {
+                                          "name": "ACH",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "Wire",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "SEPA",
+                                          "active": false
+                                      }
+                                  ]
                               },
-                              {
-                                  "name": "Wire",
-                                  "active": true
-                              },
-                              {
-                                  "name": "SEPA",
-                                  "active": false
-                              }
-                          ]
-                      },
-                      "children": []
-                  }
-              ]
+                              "children": []
+                          }
+                      ]
                   }
               ]
           }
