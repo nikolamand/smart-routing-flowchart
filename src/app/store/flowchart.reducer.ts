@@ -19,14 +19,14 @@ export const initialState: FlowchartState = {
 
 export const flowchartReducer = createReducer(
   initialState,
-  on(addStep, (state, { step }) => {
+  on(addStep, (state: any, { step }) => {
     return {
       past: [...state.past, state.current],
       current: step,
       future: []
     };
   }),
-  on(undo, (state) => {
+  on(undo, (state: any) => {
     if (state.past.length === 0) {
       return state;
     }
@@ -36,7 +36,7 @@ export const flowchartReducer = createReducer(
       future: [state.current, ...state.future]
     };
   }),
-  on(redo, (state) => {
+  on(redo, (state: any) => {
     if (state.future.length === 0) {
       return state;
     }
