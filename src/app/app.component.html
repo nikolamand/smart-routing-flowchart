@@ -93,6 +93,21 @@
 
     </section>
     <section>
+      <div class="sub-section">
+        <label for="theme-select" class="wide">Theme</label>
+        <select
+          name="theme-select"
+          id="theme-select"
+          class="wide"
+          (change)="onThemeChange($event)"
+        >
+          <option value="default">System default</option>
+          <option value="light" selected>Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </div>
+    </section>
+    <section>
       <button (click)="clearData()">Clear Flow</button>
     </section>
     <ng-template #normalStep let-data>

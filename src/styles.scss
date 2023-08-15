@@ -10,3 +10,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   padding: 1em;
   height: 100px;
 }
+
+:root {
+  --background-color: white;
+  --text-color: black;
+}
+
+body.dark-theme {
+  --background-color: black;
+  --text-color: white;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}

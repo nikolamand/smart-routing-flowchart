@@ -17,7 +17,7 @@ main {
   // background-size: 2rem 2rem;
   // background-image: linear-gradient(to right, #d9d9d9 1px, transparent 1px),
   //   linear-gradient(to bottom, #d9d9d9 1px, transparent 1px);
-  border: #333 1px solid;
+  border: var(--text-color) 1px solid;
 }
 
 #palette {

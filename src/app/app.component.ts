@@ -9,6 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Store } from '@ngrx/store';
 import { Actions } from '@ngrx/effects';
 
+import { ThemeService } from './services/theme.service';
 import { SmartRoutingComponent } from './components/flowchart/smart-routing/smart-routing.component';
 import { PaymentMethodComponent } from './components/flowchart/payment-method/payment-method.component';
 import { CurrencyComponent } from './components/flowchart/currency/currency.component';
@@ -119,6 +120,7 @@ export class AppComponent {
     private actions$: Actions,
     private store: Store<AppState>,
     private actionsSubject$: Actions,
+    private themeService: ThemeService
   ) {
     this.store.select('flowchart').subscribe((flowchartState) => {
       console.log('flowchartState', flowchartState);
@@ -152,6 +154,8 @@ export class AppComponent {
     this.stepRegistry.registerStep('currency', CurrencyComponent);
     this.stepRegistry.registerStep('payment-channel', PaymentChannelComponent);
     this.stepRegistry.registerStep('restrictions', RestrictionsComponent);
+
+    this.onThemeChange({ target: { value: 'light' } });
   }
 
   onDropError(error: NgFlowchart.DropError) {
@@ -160,6 +164,20 @@ export class AppComponent {
 
   onMoveError(error: NgFlowchart.MoveError) {
     console.log('ERROR move:', error);
+  }
+
+  toggleDarkTheme(isDarkTheme: boolean = false) {
+    this.themeService.toggleDarkTheme(isDarkTheme);
+  }
+
+  onThemeChange(event: any) {
+    if(event.target.value === 'default'){
+      // get system theme
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+      this.toggleDarkTheme(systemTheme.matches);
+      return;
+    }
+    this.toggleDarkTheme(event.target.value === 'dark');
   }
 
   showUpload() {
