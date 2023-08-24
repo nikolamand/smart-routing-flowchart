@@ -1,18 +1,12 @@
 <div class="step payment-channel-step" #canvasContent>
   <span>{{ data.name }}</span>
-  <div *ngIf="data?.channels?.length > 0">
-    <span *ngFor="let channel of data.channels; index as i">
-      <div class="channel">
-        <span>{{ channel.name }}</span>
-        <span class="sub-section">
-          <label for="active">{{channel.active ? 'Active' : 'Inactive'}}</label>
-          <input
-            type="checkbox"
-            name="active"
-            (change)="onActiveChange($event, i)"
-          />
-          </span>
-      </div>
-    </span>
+
+  <div class="channel-list">
+  <div *ngIf="data?.channels">
+    <br />
+    <div *ngFor="let channel of data.channels | keyvalue">
+      <span class="channel">{{ channel.key }}:{{ channel.value }}</span>
+    </div>
+    </div>
   </div>
 </div>
