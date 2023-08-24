@@ -115,6 +115,15 @@ export class RestrictionsComponent
       });
   }
 
+  deleteStep() {
+    this.data = {
+      ...this.data,
+      restrictions: null,
+    };
+    this.canvas.reRender();
+    this.store.dispatch(stepUpdated());
+  }
+
   setRestrictions(result: any) {
     if (result) {
       this.data = {

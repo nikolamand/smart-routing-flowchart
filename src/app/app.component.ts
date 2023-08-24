@@ -36,6 +36,8 @@ export class AppComponent {
   @ViewChild('normalStep')
   normalStepTemplate!: TemplateRef<any>;
 
+  @ViewChild('fileInput') fileInput: any;
+
   sampleJson: any;
 
   showDescription: number | null = null;
@@ -180,7 +182,7 @@ export class AppComponent {
     this.toggleDarkTheme(event.target.value === 'dark');
   }
 
-  showUpload() {
+  showDefaultJson() {
     this.http.get('assets/sample.json').subscribe((data) => {
       this.sampleJson = data;
       if (!this.sampleJson) return;
@@ -188,6 +190,34 @@ export class AppComponent {
       this.store.dispatch(addStep({ step: JSON.stringify(this.sampleJson) }));
     });
   }
+
+  //uploadJson open a dialog to upload a json file and update the flow
+  uploadJson() {
+  }
+
+handleFileInput(event: Event) {
+  const input = event.target as HTMLInputElement;
+
+  if (input.files && input.files[0]) {
+    const file = input.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (e: any) => {
+      const content = e.target.result;
+      try {
+        const jsonContent = JSON.parse(content);
+
+        // Assuming this is where you want to update your flow:
+        this.store.dispatch(addStep({ step: JSON.stringify(jsonContent) }));
+      } catch (error) {
+        console.error('Error parsing JSON:', error);
+        // Handle error, maybe show user feedback
+      }
+    };
+
+    reader.readAsText(file);
+  }
+}
 
   showFlowData() {
     let json = this.canvas.getFlow().toJSON(4);

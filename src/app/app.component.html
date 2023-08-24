@@ -26,7 +26,9 @@
 
     <section>
       <button (click)="showFlowData()">Show JSON</button>
-      <button (click)="showUpload()">Upload JSON</button>
+      <button (click)="showDefaultJson()">Default JSON</button>
+      <input type="file" #fileInput (change)="handleFileInput($event)" style="display: none;" accept=".json"/>
+      <button (click)="fileInput.click()">Upload JSON</button>
     </section>
     <section>
       <div class="sub-section ">

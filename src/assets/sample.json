@@ -7,7 +7,6 @@
       },
       "children": [
           {
-              "id": "s1688370561244",
               "type": "payment-method",
               "data": {
                   "name": "American Express"
@@ -59,7 +58,6 @@
               ]
           },
           {
-              "id": "s1686642744329",
               "type": "payment-method",
               "data": {
                   "name": "VISA"
@@ -123,7 +121,8 @@
                                   "restrictions": {
                                       "minAmount": "33",
                                       "maxAmount": "88",
-                                      "geolocation": "Serbia"
+                                      "geolocation": "Serbia",
+                                      "test": "test"
                                   }
                               },
                               "children": [
@@ -253,7 +252,6 @@
               ]
           },
           {
-              "id": "s1687503460934",
               "type": "payment-method",
               "data": {
                   "name": "MasterCard"
