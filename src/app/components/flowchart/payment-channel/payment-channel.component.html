@@ -2,11 +2,16 @@
   <span>{{ data.name }}</span>
 
   <div class="channel-list">
-  <div *ngIf="data?.channels">
-    <br />
-    <div *ngFor="let channel of data.channels | keyvalue">
-      <span class="channel">{{ channel.key }}:{{ channel.value }}</span>
-    </div>
+    <div *ngIf="data?.channels">
+      <br />
+      <div *ngFor="let channel of data.channels">
+        <span class="channel"
+          >{{ channel.name }}
+          <span *ngIf="channel.active" class="checkmark">
+            <i class="fa-solid fa-check"></i>
+          </span>
+        </span>
+      </div>
     </div>
   </div>
 </div>

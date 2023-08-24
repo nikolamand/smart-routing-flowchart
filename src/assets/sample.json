@@ -38,12 +38,18 @@
                     "data": {
                       "type": "payment-channel",
                       "name": "Payment Channel",
-                      "channels": {
-                        "paymentChannelName": "VISA Visa Sandbox 2",
-                        "paymentChannelWebsiteUrl": "http://address.url",
-                        "smartRoutingRulePaymentChannelSortOrder": 1,
-                        "countPercentage": 50.0
-                      }
+                      "channels": [
+                        {
+                          "key": "paymentChannelName2",
+                          "name": "VISA Visa Sandbox 2",
+                          "active": true
+                        },
+                        {
+                          "key": "paymentChannelName3",
+                          "name": "VISA Visa Sandbox 3",
+                          "active": true
+                        }
+                      ]
                     },
                     "children": []
                   }
@@ -85,12 +91,13 @@
                     "data": {
                       "type": "payment-channel",
                       "name": "Payment Channel",
-                      "channels": {
-                        "paymentChannelName": "VISA Visa Sandbox 2",
-                        "paymentChannelWebsiteUrl": "http://address.url",
-                        "smartRoutingRulePaymentChannelSortOrder": 1,
-                        "countPercentage": 50.0
-                      }
+                      "channels": [
+                        {
+                          "key": "paymentChannelName",
+                          "name": "VISA Visa Sandbox 2",
+                          "active": true
+                        }
+                      ]
                     },
                     "children": []
                   }
@@ -116,166 +123,22 @@
                     "data": {
                       "type": "payment-channel",
                       "name": "Payment Channel",
-                      "channels": {
-                        "paymentChannelName": "VISA Visa Sandbox 2",
-                        "paymentChannelWebsiteUrl": "http://address.url",
-                        "smartRoutingRulePaymentChannelSortOrder": 1,
-                        "countPercentage": 50.0
-                      }
+                      "channels": [
+                        {
+                          "key": "paymentChannelName",
+                          "name": "VISA Visa Sandbox 2",
+                          "active": true
+                        },
+                        {
+                          "key": "paymentChannelName2",
+                          "name": "VISA Visa Sandbox 2",
+                          "active": false
+                        }
+                      ]
                     },
                     "children": []
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "id": "s1686642793171",
-            "type": "currency",
-            "data": {
-              "name": "CAD"
-            },
-            "children": [
-              {
-                "id": "s1687764506959",
-                "type": "payment-channel",
-                "data": {
-                  "type": "payment-channel",
-                  "name": "Payment Channel",
-                  "channels": {
-                    "paymentChannelName": "VISA Visa Sandbox 2",
-                    "paymentChannelWebsiteUrl": "http://address.url",
-                    "smartRoutingRulePaymentChannelSortOrder": 1,
-                    "countPercentage": 50.0
-                  }
-                },
-                "children": []
-              }
-            ]
-          },
-          {
-            "id": "s1686642805912",
-            "type": "currency",
-            "data": {
-              "name": "USD"
-            },
-            "children": [
-              {
-                "id": "s1687764506959",
-                "type": "payment-channel",
-                "data": {
-                  "type": "payment-channel",
-                  "name": "Payment Channel",
-                  "channels": {
-                    "paymentChannelName": "VISA Visa Sandbox 2",
-                    "paymentChannelWebsiteUrl": "http://address.url",
-                    "smartRoutingRulePaymentChannelSortOrder": 1,
-                    "countPercentage": 50.0
-                  }},
-                "children": []
-              }
-            ]
-          },
-          {
-            "id": "s1686642818653",
-            "type": "currency",
-            "data": {
-              "name": "GBP"
-            },
-            "children": [
-              {
-                "id": "s1687764506959",
-                "type": "payment-channel",
-                "data": {
-                  "type": "payment-channel",
-                  "name": "Payment Channel",
-                  "channels": {
-                    "paymentChannelName": "VISA Visa Sandbox 2",
-                    "paymentChannelWebsiteUrl": "http://address.url",
-                    "smartRoutingRulePaymentChannelSortOrder": 1,
-                    "countPercentage": 50.0
-                  }},
-                "children": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "payment-method",
-        "data": {
-          "name": "MasterCardddß"
-        },
-        "children": [
-          {
-            "id": "s1687503472101",
-            "type": "currency",
-            "data": {
-              "name": "USD"
-            },
-            "children": [
-              {
-                "id": "s1687764506959",
-                "type": "payment-channel",
-                "data": {
-                  "type": "payment-channel",
-                  "name": "Payment Channel",
-                  "channels": {
-                    "paymentChannelName": "VISA Visa Sandbox 2",
-                    "paymentChannelWebsiteUrl": "http://address.url",
-                    "smartRoutingRulePaymentChannelSortOrder": 1,
-                    "countPercentage": 50.0
-                  }
-                },
-                "children": []
-              }
-            ]
-          },
-          {
-            "id": "s1687503489251",
-            "type": "currency",
-            "data": {
-              "name": "CAD"
-            },
-            "children": [
-              {
-                "id": "s1687764506959",
-                "type": "payment-channel",
-                "data": {
-                  "type": "payment-channel",
-                  "name": "Payment Channel",
-                  "channels": {
-                    "paymentChannelName": "VISA Visa Sandbox 2",
-                    "paymentChannelWebsiteUrl": "http://address.url",
-                    "smartRoutingRulePaymentChannelSortOrder": 1,
-                    "countPercentage": 50.0
-                  }
-                },
-                "children": []
-              }
-            ]
-          },
-          {
-            "id": "s1687503482835",
-            "type": "currency",
-            "data": {
-              "name": "GBP"
-            },
-            "children": [
-              {
-                "id": "s1687764506959",
-                "type": "payment-channel",
-                "data": {
-                  "type": "payment-channel",
-                  "name": "Payment Channel",
-                  "channels": {
-                    "paymentChannelName": "VISA Visa Sandbox 2",
-                    "paymentChannelWebsiteUrl": "http://address.url",
-                    "smartRoutingRulePaymentChannelSortOrder": 1,
-                    "countPercentage": 50.0
-                  }
-                },
-                "children": []
               }
             ]
           }
