@@ -12,10 +12,8 @@
   <div class="restrictions-list">
     <div *ngIf="data?.restrictions">
       <br />
-      <div *ngFor="let restriction of data.restrictions | keyvalue">
-        <span class="restriction"
-          >{{ restriction.key }}:{{ restriction.value }}</span
-        >
+      <div *ngFor="let restriction of data.restrictions">
+        <span class="restriction">{{ restriction.name }}: {{restriction.value}}</span>
       </div>
     </div>
   </div>

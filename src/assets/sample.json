@@ -25,11 +25,13 @@
                 "data": {
                   "type": "restrictions",
                   "name": "Restrictions",
-                  "restrictions": {
-                    "minAmount": "100",
-                    "maxAmount": null,
-                    "geolocation": null
-                  }
+                  "restrictions": [
+                    {
+                      "key": "minAmount",
+                      "name": "Min amount",
+                      "value": "100"
+                    }
+                  ]
                 },
                 "children": [
                   {
@@ -78,11 +80,18 @@
                 "data": {
                   "type": "restrictions",
                   "name": "Restrictions",
-                  "restrictions": {
-                    "minAmount": "100",
-                    "maxAmount": "1000",
-                    "geolocation": null
-                  }
+                  "restrictions": [
+                    {
+                      "key": "minAmount",
+                      "name": "Min amount",
+                      "value": "100"
+                    },
+                    {
+                      "key": "maxAmount",
+                      "name": "Max amount",
+                      "value": "1000"
+                    }
+                  ]
                 },
                 "children": [
                   {
@@ -109,12 +118,28 @@
                 "data": {
                   "type": "restrictions",
                   "name": "Restrictions",
-                  "restrictions": {
-                    "minAmount": "33",
-                    "maxAmount": "88",
-                    "geolocation": "Serbia",
-                    "test": "test"
-                  }
+                  "restrictions": [
+                    {
+                      "key": "minAmount",
+                      "name": "Min amount",
+                      "value": "33"
+                    },
+                    {
+                      "key": "maxAmount",
+                      "name": "Max amount",
+                      "value": "88"
+                    },
+                    {
+                      "key": "geolocation",
+                      "name": "Geolocation",
+                      "value": "Serbia"
+                    },
+                    {
+                      "key": "test",
+                      "name": "Test",
+                      "value": "test"
+                    }
+                  ]
                 },
                 "children": [
                   {

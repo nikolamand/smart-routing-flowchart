@@ -5,12 +5,7 @@
     <div *ngIf="data?.channels">
       <br />
       <div *ngFor="let channel of data.channels">
-        <span class="channel"
-          >{{ channel.name }}
-          <span *ngIf="channel.active" class="checkmark">
-            <i class="fa-solid fa-check"></i>
-          </span>
-        </span>
+        <span class="channel" *ngIf="channel.active === true">{{ channel.name }} </span>
       </div>
     </div>
   </div>
