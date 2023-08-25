@@ -115,7 +115,7 @@
                             "key": "PaymentChannelName",
                             "value": "VISA Visa Sandbox 2",
                             "label": "Payment channel",
-                            "isActive": true,
+                            "isActive": "Active",
                             "sortOrder": 1,
                             "fields": [
                               {
@@ -154,7 +154,7 @@
                             "key": "PaymentChannelName",
                             "value": "VISA Visa Sandbox X",
                             "label": "Payment channel",
-                            "isActive": true,
+                            "isActive": "Active",
                             "sortOrder": 2,
                             "fields": [
                               {
@@ -193,7 +193,7 @@
                             "key": "PaymentChannelName",
                             "value": "VISA Visa Sandbox 3",
                             "label": "Payment channel",
-                            "isActive": true,
+                            "isActive": "Active",
                             "sortOrder": 3,
                             "fields": [
                               {
@@ -232,7 +232,7 @@
                             "key": "PaymentChannelName",
                             "value": "VISA Card",
                             "label": "Payment channel",
-                            "isActive": true,
+                            "isActive": "Active",
                             "sortOrder": 4,
                             "fields": [
                               {
@@ -371,7 +371,7 @@
                             "key": "PaymentChannelName",
                             "value": "VISA Visa Sandbox 2",
                             "label": "Payment channel",
-                            "isActive": true,
+                            "isActive": "Active",
                             "sortOrder": 1,
                             "fields": [
                               {
@@ -511,7 +511,7 @@
                             "key": "PaymentChannelName",
                             "value": "VISA Visa Sandbox 2",
                             "label": "Payment channel",
-                            "isActive": true,
+                            "isActive": "Active",
                             "sortOrder": 1,
                             "fields": [
                               {
@@ -550,7 +550,7 @@
                             "key": "PaymentChannelName",
                             "value": "VISA web2 Visa Sandbox",
                             "label": "Payment channel",
-                            "isActive": true,
+                            "isActive": "Active",
                             "sortOrder": 2,
                             "fields": [
                               {
@@ -644,7 +644,7 @@
                           {
                             "key": "paymentChannelName",
                             "value": "VISA Visa Sandbox 2",
-                            "isActive": true
+                            "isActive": "Active"
                           }
                         ]
                       }
@@ -697,12 +697,12 @@
                           {
                             "key": "paymentChannelName",
                             "value": "VISA Visa Sandbox 2",
-                            "isActive": true
+                            "isActive": "Active"
                           },
                           {
                             "key": "paymentChannelName2",
                             "value": "VISA Visa Sandbox 2",
-                            "isActive": false
+                            "isActive": "Active"
                           }
                         ]
                       }

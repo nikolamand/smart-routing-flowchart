@@ -133,7 +133,7 @@ export class PaymentChannelComponent
     if (result) {
       this.data.channels = {
         fields: result.map((item: string) => {
-          return { value: item, isActive: true, key: 'PaymentChannelName' };
+          return { value: item, isActive: "Active", key: 'PaymentChannelName' };
         }),
       };
       this.nameChanged = true;
