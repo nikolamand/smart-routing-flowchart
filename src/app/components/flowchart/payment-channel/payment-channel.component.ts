@@ -131,9 +131,11 @@ export class PaymentChannelComponent
 
   setData(result: any): void {
     if (result) {
-      this.data.channels = result.map((item: string) => {
-        return { value: item, isActive: true, key: 'PaymentChannelName' };
-      });
+      this.data.channels = {
+        fields: result.map((item: string) => {
+          return { value: item, isActive: true, key: 'PaymentChannelName' };
+        }),
+      };
       this.nameChanged = true;
       this.store.dispatch(stepUpdated());
     } else {
@@ -142,10 +144,5 @@ export class PaymentChannelComponent
     setTimeout(() => {
       this.canvas.reRender();
     }, 100);
-  }
-
-  onActiveChange(event: any, index: number): void {
-    const isChecked = event.target.checked;
-    this.data.channels[index].active = isChecked;
   }
 }

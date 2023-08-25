@@ -62,7 +62,7 @@ export class RestrictionsComponent
     }
 
     if (
-      dropEvent?.step?.type !== 'currency' &&
+      !['currency', 'restrictions'].includes(dropEvent?.step?.type) &&
       dropEvent?.position === 'BELOW'
     ) {
       return false;
@@ -139,7 +139,9 @@ export class RestrictionsComponent
     if (result) {
       this.data = {
         ...this.data,
-        restrictions: result,
+        restrictions: {
+          fields: result,
+        },
       };
       setTimeout(() => {
         this.canvas.reRender();

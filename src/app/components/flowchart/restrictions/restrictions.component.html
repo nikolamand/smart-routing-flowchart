@@ -10,9 +10,9 @@
   </div>
 
   <div class="restrictions-list">
-    <div *ngIf="data?.restrictions">
+    <div *ngIf="data?.restrictions?.fields.length > 0">
       <br />
-      <div *ngFor="let restriction of data.restrictions">
+      <div *ngFor="let restriction of data.restrictions.fields">
         <span class="restriction">{{ restriction.label }}: {{restriction.value}}</span>
       </div>
     </div>
