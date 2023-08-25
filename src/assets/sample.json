@@ -7,561 +7,569 @@
     },
     "children": [
       {
-        "type": "currency",
+        "type": "payment-method",
         "data": {
-          "name": "EUR"
+          "name": "VISA"
         },
         "children": [
           {
-            "type": "restrictions",
+            "type": "currency",
             "data": {
-              "name": "Restrictions",
-              "restrictions": [
-                {
-                  "key": "SmartRoutingRuleSortOrder",
-                  "value": 1,
-                  "label": "Sort order"
-                },
-                {
-                  "key": "HasMinAmount",
-                  "value": false,
-                  "label": "Use min amount restriction"
-                },
-                {
-                  "key": "MinAmount",
-                  "value": 0.0,
-                  "label": "Min amount"
-                },
-                {
-                  "key": "HasMaxAmount",
-                  "value": false,
-                  "label": "Use max amount restriction"
-                },
-                {
-                  "key": "MaxAmount",
-                  "value": 0.0,
-                  "label": "Max amount"
-                },
-                {
-                  "key": "HasCategory",
-                  "value": false,
-                  "label": "Use category"
-                },
-                {
-                  "key": "Category",
-                  "label": "Category"
-                },
-                {
-                  "key": "HasBinRange",
-                  "value": false,
-                  "label": "Use BIN ranges"
-                },
-                {
-                  "key": "BinRangeFrom",
-                  "value": 0,
-                  "label": "From BIN range"
-                },
-                {
-                  "key": "BinRangeTo",
-                  "value": 0,
-                  "label": "To BIN range"
-                },
-                {
-                  "key": "UseGeolocation",
-                  "value": false,
-                  "label": "Use geolocation"
-                },
-                {
-                  "key": "CountrySource",
-                  "value": 0,
-                  "label": "Country parameter"
-                },
-                {
-                  "key": "CountryId",
-                  "value": 0,
-                  "label": "Country"
-                },
-                {
-                  "key": "UseLoadBalancing",
-                  "value": true,
-                  "label": "Use load balancing"
-                },
-                {
-                  "key": "LoadBalancingType",
-                  "value": "CountPercentage",
-                  "label": "Load balancing type"
-                }
-              ]
+              "name": "EUR"
             },
             "children": [
               {
-                "type": "payment-channel",
+                "type": "restrictions",
                 "data": {
-                  "name": "Payment Channels",
-                  "channels": [
+                  "name": "Restrictions",
+                  "restrictions": [
                     {
-                      "key": "PaymentChannelName",
-                      "value": "VISA Visa Sandbox 2",
-                      "label": "Payment channel",
-                      "isActive": true,
-                      "sortOrder": 1,
-                      "fields": [
-                        {
-                          "key": "SmartRoutingRulePaymentChannelSortOrder",
-                          "value": 1,
-                          "label": "Sort order"
-                        },
-                        {
-                          "key": "HourFrom",
-                          "label": "UTC hour from"
-                        },
-                        {
-                          "key": "HourTo",
-                          "label": "UTC hour to"
-                        },
-                        {
-                          "key": "NumberCaptured",
-                          "label": "Number of captured"
-                        },
-                        {
-                          "key": "NumberDeclined",
-                          "label": "Number of declined"
-                        },
-                        {
-                          "key": "MaxVolume",
-                          "label": "Max volume"
-                        },
-                        {
-                          "key": "CountPercentage",
-                          "value": 50.0,
-                          "label": "Percentage"
-                        }
-                      ]
+                      "key": "SmartRoutingRuleSortOrder",
+                      "value": 1,
+                      "label": "Sort order"
                     },
                     {
-                      "key": "PaymentChannelName",
-                      "value": "VISA Visa Sandbox X",
-                      "label": "Payment channel",
-                      "isActive": true,
-                      "sortOrder": 2,
-                      "fields": [
-                        {
-                          "key": "SmartRoutingRulePaymentChannelSortOrder",
-                          "value": 2,
-                          "label": "Sort order"
-                        },
-                        {
-                          "key": "HourFrom",
-                          "label": "UTC hour from"
-                        },
-                        {
-                          "key": "HourTo",
-                          "label": "UTC hour to"
-                        },
-                        {
-                          "key": "NumberCaptured",
-                          "label": "Number of captured"
-                        },
-                        {
-                          "key": "NumberDeclined",
-                          "label": "Number of declined"
-                        },
-                        {
-                          "key": "MaxVolume",
-                          "label": "Max volume"
-                        },
-                        {
-                          "key": "CountPercentage",
-                          "value": 40.0,
-                          "label": "Percentage"
-                        }
-                      ]
+                      "key": "HasMinAmount",
+                      "value": false,
+                      "label": "Use min amount restriction"
                     },
                     {
-                      "key": "PaymentChannelName",
-                      "value": "VISA Visa Sandbox 3",
-                      "label": "Payment channel",
-                      "isActive": true,
-                      "sortOrder": 3,
-                      "fields": [
-                        {
-                          "key": "SmartRoutingRulePaymentChannelSortOrder",
-                          "value": 4,
-                          "label": "Sort order"
-                        },
-                        {
-                          "key": "HourFrom",
-                          "label": "UTC hour from"
-                        },
-                        {
-                          "key": "HourTo",
-                          "label": "UTC hour to"
-                        },
-                        {
-                          "key": "NumberCaptured",
-                          "label": "Number of captured"
-                        },
-                        {
-                          "key": "NumberDeclined",
-                          "label": "Number of declined"
-                        },
-                        {
-                          "key": "MaxVolume",
-                          "label": "Max volume"
-                        },
-                        {
-                          "key": "CountPercentage",
-                          "value": 8.0,
-                          "label": "Percentage"
-                        }
-                      ]
+                      "key": "MinAmount",
+                      "value": 0.0,
+                      "label": "Min amount"
                     },
                     {
-                      "key": "PaymentChannelName",
-                      "value": "VISA Card",
-                      "label": "Payment channel",
-                      "isActive": true,
-                      "sortOrder": 4,
-                      "fields": [
-                        {
-                          "key": "SmartRoutingRulePaymentChannelSortOrder",
-                          "value": 5,
-                          "label": "Sort order"
-                        },
-                        {
-                          "key": "HourFrom",
-                          "label": "UTC hour from"
-                        },
-                        {
-                          "key": "HourTo",
-                          "label": "UTC hour to"
-                        },
-                        {
-                          "key": "NumberCaptured",
-                          "label": "Number of captured"
-                        },
-                        {
-                          "key": "NumberDeclined",
-                          "label": "Number of declined"
-                        },
-                        {
-                          "key": "MaxVolume",
-                          "label": "Max volume"
-                        },
-                        {
-                          "key": "CountPercentage",
-                          "value": 2.0,
-                          "label": "Percentage"
-                        }
-                      ]
+                      "key": "HasMaxAmount",
+                      "value": false,
+                      "label": "Use max amount restriction"
+                    },
+                    {
+                      "key": "MaxAmount",
+                      "value": 0.0,
+                      "label": "Max amount"
+                    },
+                    {
+                      "key": "HasCategory",
+                      "value": false,
+                      "label": "Use category"
+                    },
+                    {
+                      "key": "Category",
+                      "label": "Category"
+                    },
+                    {
+                      "key": "HasBinRange",
+                      "value": false,
+                      "label": "Use BIN ranges"
+                    },
+                    {
+                      "key": "BinRangeFrom",
+                      "value": 0,
+                      "label": "From BIN range"
+                    },
+                    {
+                      "key": "BinRangeTo",
+                      "value": 0,
+                      "label": "To BIN range"
+                    },
+                    {
+                      "key": "UseGeolocation",
+                      "value": false,
+                      "label": "Use geolocation"
+                    },
+                    {
+                      "key": "CountrySource",
+                      "value": 0,
+                      "label": "Country parameter"
+                    },
+                    {
+                      "key": "CountryId",
+                      "value": 0,
+                      "label": "Country"
+                    },
+                    {
+                      "key": "UseLoadBalancing",
+                      "value": true,
+                      "label": "Use load balancing"
+                    },
+                    {
+                      "key": "LoadBalancingType",
+                      "value": "CountPercentage",
+                      "label": "Load balancing type"
                     }
                   ]
                 },
-                "children": []
-              }
-            ]
-          },
-          {
-            "type": "restrictions",
-            "data": {
-              "name": "Restrictions",
-              "restrictions": [
-                {
-                  "key": "SmartRoutingRuleSortOrder",
-                  "value": 7,
-                  "label": "Sort order"
-                },
-                {
-                  "key": "HasMinAmount",
-                  "value": false,
-                  "label": "Use min amount restriction"
-                },
-                {
-                  "key": "MinAmount",
-                  "value": 0.0,
-                  "label": "Min amount"
-                },
-                {
-                  "key": "HasMaxAmount",
-                  "value": false,
-                  "label": "Use max amount restriction"
-                },
-                {
-                  "key": "MaxAmount",
-                  "value": 0.0,
-                  "label": "Max amount"
-                },
-                {
-                  "key": "HasCategory",
-                  "value": false,
-                  "label": "Use category"
-                },
-                {
-                  "key": "Category",
-                  "label": "Category"
-                },
-                {
-                  "key": "HasBinRange",
-                  "value": false,
-                  "label": "Use BIN ranges"
-                },
-                {
-                  "key": "BinRangeFrom",
-                  "value": 0,
-                  "label": "From BIN range"
-                },
-                {
-                  "key": "BinRangeTo",
-                  "value": 0,
-                  "label": "To BIN range"
-                },
-                {
-                  "key": "UseGeolocation",
-                  "value": false,
-                  "label": "Use geolocation"
-                },
-                {
-                  "key": "CountrySource",
-                  "value": 0,
-                  "label": "Country parameter"
-                },
-                {
-                  "key": "CountryId",
-                  "value": 0,
-                  "label": "Country"
-                },
-                {
-                  "key": "UseLoadBalancing",
-                  "value": true,
-                  "label": "Use load balancing"
-                },
-                {
-                  "key": "LoadBalancingType",
-                  "value": "TimeInterval",
-                  "label": "Load balancing type"
-                }
-              ]
-            },
-            "children": [
+                "children": [
+                  {
+                    "type": "payment-channel",
+                    "data": {
+                      "name": "Payment Channels",
+                      "channels": [
+                        {
+                          "key": "PaymentChannelName",
+                          "value": "VISA Visa Sandbox 2",
+                          "label": "Payment channel",
+                          "isActive": true,
+                          "sortOrder": 1,
+                          "fields": [
+                            {
+                              "key": "SmartRoutingRulePaymentChannelSortOrder",
+                              "value": 1,
+                              "label": "Sort order"
+                            },
+                            {
+                              "key": "HourFrom",
+                              "label": "UTC hour from"
+                            },
+                            {
+                              "key": "HourTo",
+                              "label": "UTC hour to"
+                            },
+                            {
+                              "key": "NumberCaptured",
+                              "label": "Number of captured"
+                            },
+                            {
+                              "key": "NumberDeclined",
+                              "label": "Number of declined"
+                            },
+                            {
+                              "key": "MaxVolume",
+                              "label": "Max volume"
+                            },
+                            {
+                              "key": "CountPercentage",
+                              "value": 50.0,
+                              "label": "Percentage"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "PaymentChannelName",
+                          "value": "VISA Visa Sandbox X",
+                          "label": "Payment channel",
+                          "isActive": true,
+                          "sortOrder": 2,
+                          "fields": [
+                            {
+                              "key": "SmartRoutingRulePaymentChannelSortOrder",
+                              "value": 2,
+                              "label": "Sort order"
+                            },
+                            {
+                              "key": "HourFrom",
+                              "label": "UTC hour from"
+                            },
+                            {
+                              "key": "HourTo",
+                              "label": "UTC hour to"
+                            },
+                            {
+                              "key": "NumberCaptured",
+                              "label": "Number of captured"
+                            },
+                            {
+                              "key": "NumberDeclined",
+                              "label": "Number of declined"
+                            },
+                            {
+                              "key": "MaxVolume",
+                              "label": "Max volume"
+                            },
+                            {
+                              "key": "CountPercentage",
+                              "value": 40.0,
+                              "label": "Percentage"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "PaymentChannelName",
+                          "value": "VISA Visa Sandbox 3",
+                          "label": "Payment channel",
+                          "isActive": true,
+                          "sortOrder": 3,
+                          "fields": [
+                            {
+                              "key": "SmartRoutingRulePaymentChannelSortOrder",
+                              "value": 4,
+                              "label": "Sort order"
+                            },
+                            {
+                              "key": "HourFrom",
+                              "label": "UTC hour from"
+                            },
+                            {
+                              "key": "HourTo",
+                              "label": "UTC hour to"
+                            },
+                            {
+                              "key": "NumberCaptured",
+                              "label": "Number of captured"
+                            },
+                            {
+                              "key": "NumberDeclined",
+                              "label": "Number of declined"
+                            },
+                            {
+                              "key": "MaxVolume",
+                              "label": "Max volume"
+                            },
+                            {
+                              "key": "CountPercentage",
+                              "value": 8.0,
+                              "label": "Percentage"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "PaymentChannelName",
+                          "value": "VISA Card",
+                          "label": "Payment channel",
+                          "isActive": true,
+                          "sortOrder": 4,
+                          "fields": [
+                            {
+                              "key": "SmartRoutingRulePaymentChannelSortOrder",
+                              "value": 5,
+                              "label": "Sort order"
+                            },
+                            {
+                              "key": "HourFrom",
+                              "label": "UTC hour from"
+                            },
+                            {
+                              "key": "HourTo",
+                              "label": "UTC hour to"
+                            },
+                            {
+                              "key": "NumberCaptured",
+                              "label": "Number of captured"
+                            },
+                            {
+                              "key": "NumberDeclined",
+                              "label": "Number of declined"
+                            },
+                            {
+                              "key": "MaxVolume",
+                              "label": "Max volume"
+                            },
+                            {
+                              "key": "CountPercentage",
+                              "value": 2.0,
+                              "label": "Percentage"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "children": []
+                  }
+                ]
+              },
               {
-                "type": "payment-channel",
+                "type": "restrictions",
                 "data": {
-                  "name": "Payment Channels",
-                  "channels": [
+                  "name": "Restrictions",
+                  "restrictions": [
                     {
-                      "key": "PaymentChannelName",
-                      "value": "VISA Visa Sandbox 2",
-                      "label": "Payment channel",
-                      "isActive": true,
-                      "sortOrder": 1,
-                      "fields": [
-                        {
-                          "key": "SmartRoutingRulePaymentChannelSortOrder",
-                          "value": 2,
-                          "label": "Sort order"
-                        },
-                        {
-                          "key": "HourFrom",
-                          "value": 17,
-                          "label": "UTC hour from"
-                        },
-                        {
-                          "key": "HourTo",
-                          "value": 24,
-                          "label": "UTC hour to"
-                        },
-                        {
-                          "key": "NumberCaptured",
-                          "label": "Number of captured"
-                        },
-                        {
-                          "key": "NumberDeclined",
-                          "label": "Number of declined"
-                        },
-                        {
-                          "key": "MaxVolume",
-                          "label": "Max volume"
-                        },
-                        {
-                          "key": "CountPercentage",
-                          "label": "Percentage"
-                        }
-                      ]
+                      "key": "SmartRoutingRuleSortOrder",
+                      "value": 7,
+                      "label": "Sort order"
+                    },
+                    {
+                      "key": "HasMinAmount",
+                      "value": false,
+                      "label": "Use min amount restriction"
+                    },
+                    {
+                      "key": "MinAmount",
+                      "value": 0.0,
+                      "label": "Min amount"
+                    },
+                    {
+                      "key": "HasMaxAmount",
+                      "value": false,
+                      "label": "Use max amount restriction"
+                    },
+                    {
+                      "key": "MaxAmount",
+                      "value": 0.0,
+                      "label": "Max amount"
+                    },
+                    {
+                      "key": "HasCategory",
+                      "value": false,
+                      "label": "Use category"
+                    },
+                    {
+                      "key": "Category",
+                      "label": "Category"
+                    },
+                    {
+                      "key": "HasBinRange",
+                      "value": false,
+                      "label": "Use BIN ranges"
+                    },
+                    {
+                      "key": "BinRangeFrom",
+                      "value": 0,
+                      "label": "From BIN range"
+                    },
+                    {
+                      "key": "BinRangeTo",
+                      "value": 0,
+                      "label": "To BIN range"
+                    },
+                    {
+                      "key": "UseGeolocation",
+                      "value": false,
+                      "label": "Use geolocation"
+                    },
+                    {
+                      "key": "CountrySource",
+                      "value": 0,
+                      "label": "Country parameter"
+                    },
+                    {
+                      "key": "CountryId",
+                      "value": 0,
+                      "label": "Country"
+                    },
+                    {
+                      "key": "UseLoadBalancing",
+                      "value": true,
+                      "label": "Use load balancing"
+                    },
+                    {
+                      "key": "LoadBalancingType",
+                      "value": "TimeInterval",
+                      "label": "Load balancing type"
                     }
                   ]
                 },
-                "children": []
-              }
-            ]
-          },
-          {
-            "type": "restrictions",
-            "data": {
-              "name": "Restrictions",
-              "restrictions": [
-                {
-                  "key": "SmartRoutingRuleSortOrder",
-                  "value": 8,
-                  "label": "Sort order"
-                },
-                {
-                  "key": "HasMinAmount",
-                  "value": true,
-                  "label": "Use min amount restriction"
-                },
-                {
-                  "key": "MinAmount",
-                  "value": 100.0,
-                  "label": "Min amount"
-                },
-                {
-                  "key": "HasMaxAmount",
-                  "value": false,
-                  "label": "Use max amount restriction"
-                },
-                {
-                  "key": "MaxAmount",
-                  "value": 300.0,
-                  "label": "Max amount"
-                },
-                {
-                  "key": "HasCategory",
-                  "value": false,
-                  "label": "Use category"
-                },
-                {
-                  "key": "Category",
-                  "label": "Category"
-                },
-                {
-                  "key": "HasBinRange",
-                  "value": false,
-                  "label": "Use BIN ranges"
-                },
-                {
-                  "key": "BinRangeFrom",
-                  "value": 0,
-                  "label": "From BIN range"
-                },
-                {
-                  "key": "BinRangeTo",
-                  "value": 0,
-                  "label": "To BIN range"
-                },
-                {
-                  "key": "UseGeolocation",
-                  "value": false,
-                  "label": "Use geolocation"
-                },
-                {
-                  "key": "CountrySource",
-                  "value": 0,
-                  "label": "Country parameter"
-                },
-                {
-                  "key": "CountryId",
-                  "value": 0,
-                  "label": "Country"
-                },
-                {
-                  "key": "UseLoadBalancing",
-                  "value": true,
-                  "label": "Use load balancing"
-                },
-                {
-                  "key": "LoadBalancingType",
-                  "value": "MaxVolume",
-                  "label": "Load balancing type"
-                }
-              ]
-            },
-            "children": [
-              {
-                "type": "payment-channel",
-                "data": {
-                  "name": "Payment Channels",
-                  "channels": [
-                    {
-                      "key": "PaymentChannelName",
-                      "value": "VISA Visa Sandbox 2",
-                      "label": "Payment channel",
-                      "isActive": true,
-                      "sortOrder": 1,
-                      "fields": [
+                "children": [
+                  {
+                    "type": "payment-channel",
+                    "data": {
+                      "name": "Payment Channels",
+                      "channels": [
                         {
-                          "key": "SmartRoutingRulePaymentChannelSortOrder",
-                          "value": 1,
-                          "label": "Sort order"
-                        },
-                        {
-                          "key": "HourFrom",
-                          "label": "UTC hour from"
-                        },
-                        {
-                          "key": "HourTo",
-                          "label": "UTC hour to"
-                        },
-                        {
-                          "key": "NumberCaptured",
-                          "label": "Number of captured"
-                        },
-                        {
-                          "key": "NumberDeclined",
-                          "label": "Number of declined"
-                        },
-                        {
-                          "key": "MaxVolume",
-                          "value": 50000.0,
-                          "label": "Max volume"
-                        },
-                        {
-                          "key": "CountPercentage",
-                          "label": "Percentage"
+                          "key": "PaymentChannelName",
+                          "value": "VISA Visa Sandbox 2",
+                          "label": "Payment channel",
+                          "isActive": true,
+                          "sortOrder": 1,
+                          "fields": [
+                            {
+                              "key": "SmartRoutingRulePaymentChannelSortOrder",
+                              "value": 2,
+                              "label": "Sort order"
+                            },
+                            {
+                              "key": "HourFrom",
+                              "value": 17,
+                              "label": "UTC hour from"
+                            },
+                            {
+                              "key": "HourTo",
+                              "value": 24,
+                              "label": "UTC hour to"
+                            },
+                            {
+                              "key": "NumberCaptured",
+                              "label": "Number of captured"
+                            },
+                            {
+                              "key": "NumberDeclined",
+                              "label": "Number of declined"
+                            },
+                            {
+                              "key": "MaxVolume",
+                              "label": "Max volume"
+                            },
+                            {
+                              "key": "CountPercentage",
+                              "label": "Percentage"
+                            }
+                          ]
                         }
                       ]
                     },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "type": "restrictions",
+                "data": {
+                  "name": "Restrictions",
+                  "restrictions": [
                     {
-                      "key": "PaymentChannelName",
-                      "value": "VISA web2 Visa Sandbox",
-                      "label": "Payment channel",
-                      "isActive": true,
-                      "sortOrder": 2,
-                      "fields": [
-                        {
-                          "key": "SmartRoutingRulePaymentChannelSortOrder",
-                          "value": 3,
-                          "label": "Sort order"
-                        },
-                        {
-                          "key": "HourFrom",
-                          "label": "UTC hour from"
-                        },
-                        {
-                          "key": "HourTo",
-                          "label": "UTC hour to"
-                        },
-                        {
-                          "key": "NumberCaptured",
-                          "label": "Number of captured"
-                        },
-                        {
-                          "key": "NumberDeclined",
-                          "label": "Number of declined"
-                        },
-                        {
-                          "key": "MaxVolume",
-                          "value": 1000.0,
-                          "label": "Max volume"
-                        },
-                        {
-                          "key": "CountPercentage",
-                          "label": "Percentage"
-                        }
-                      ]
+                      "key": "SmartRoutingRuleSortOrder",
+                      "value": 8,
+                      "label": "Sort order"
+                    },
+                    {
+                      "key": "HasMinAmount",
+                      "value": true,
+                      "label": "Use min amount restriction"
+                    },
+                    {
+                      "key": "MinAmount",
+                      "value": 100.0,
+                      "label": "Min amount"
+                    },
+                    {
+                      "key": "HasMaxAmount",
+                      "value": false,
+                      "label": "Use max amount restriction"
+                    },
+                    {
+                      "key": "MaxAmount",
+                      "value": 300.0,
+                      "label": "Max amount"
+                    },
+                    {
+                      "key": "HasCategory",
+                      "value": false,
+                      "label": "Use category"
+                    },
+                    {
+                      "key": "Category",
+                      "label": "Category"
+                    },
+                    {
+                      "key": "HasBinRange",
+                      "value": false,
+                      "label": "Use BIN ranges"
+                    },
+                    {
+                      "key": "BinRangeFrom",
+                      "value": 0,
+                      "label": "From BIN range"
+                    },
+                    {
+                      "key": "BinRangeTo",
+                      "value": 0,
+                      "label": "To BIN range"
+                    },
+                    {
+                      "key": "UseGeolocation",
+                      "value": false,
+                      "label": "Use geolocation"
+                    },
+                    {
+                      "key": "CountrySource",
+                      "value": 0,
+                      "label": "Country parameter"
+                    },
+                    {
+                      "key": "CountryId",
+                      "value": 0,
+                      "label": "Country"
+                    },
+                    {
+                      "key": "UseLoadBalancing",
+                      "value": true,
+                      "label": "Use load balancing"
+                    },
+                    {
+                      "key": "LoadBalancingType",
+                      "value": "MaxVolume",
+                      "label": "Load balancing type"
                     }
                   ]
                 },
-                "children": []
+                "children": [
+                  {
+                    "type": "payment-channel",
+                    "data": {
+                      "name": "Payment Channels",
+                      "channels": [
+                        {
+                          "key": "PaymentChannelName",
+                          "value": "VISA Visa Sandbox 2",
+                          "label": "Payment channel",
+                          "isActive": true,
+                          "sortOrder": 1,
+                          "fields": [
+                            {
+                              "key": "SmartRoutingRulePaymentChannelSortOrder",
+                              "value": 1,
+                              "label": "Sort order"
+                            },
+                            {
+                              "key": "HourFrom",
+                              "label": "UTC hour from"
+                            },
+                            {
+                              "key": "HourTo",
+                              "label": "UTC hour to"
+                            },
+                            {
+                              "key": "NumberCaptured",
+                              "label": "Number of captured"
+                            },
+                            {
+                              "key": "NumberDeclined",
+                              "label": "Number of declined"
+                            },
+                            {
+                              "key": "MaxVolume",
+                              "value": 50000.0,
+                              "label": "Max volume"
+                            },
+                            {
+                              "key": "CountPercentage",
+                              "label": "Percentage"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "PaymentChannelName",
+                          "value": "VISA web2 Visa Sandbox",
+                          "label": "Payment channel",
+                          "isActive": true,
+                          "sortOrder": 2,
+                          "fields": [
+                            {
+                              "key": "SmartRoutingRulePaymentChannelSortOrder",
+                              "value": 3,
+                              "label": "Sort order"
+                            },
+                            {
+                              "key": "HourFrom",
+                              "label": "UTC hour from"
+                            },
+                            {
+                              "key": "HourTo",
+                              "label": "UTC hour to"
+                            },
+                            {
+                              "key": "NumberCaptured",
+                              "label": "Number of captured"
+                            },
+                            {
+                              "key": "NumberDeclined",
+                              "label": "Number of declined"
+                            },
+                            {
+                              "key": "MaxVolume",
+                              "value": 1000.0,
+                              "label": "Max volume"
+                            },
+                            {
+                              "key": "CountPercentage",
+                              "label": "Percentage"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "children": []
+                  }
+                ]
               }
             ]
           }
@@ -577,7 +585,7 @@
             "id": "s1686642757070",
             "type": "currency",
             "data": {
-              "name": "EUR"
+              "name": "USD"
             },
             "children": [
               {
