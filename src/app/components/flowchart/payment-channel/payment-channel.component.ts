@@ -46,7 +46,11 @@ export class PaymentChannelComponent
     'FPS',
   ];
 
-  constructor(public dialog: MatDialog, public snackbar: MatSnackBar, private store: Store<AppState>) {
+  constructor(
+    public dialog: MatDialog,
+    public snackbar: MatSnackBar,
+    private store: Store<AppState>
+  ) {
     super();
   }
 
@@ -67,7 +71,11 @@ export class PaymentChannelComponent
   }
 
   override canDrop(dropEvent: NgFlowchart.DropTarget): boolean {
-    console.log('dropEvent', dropEvent, ['currency', 'restrictions'].includes(dropEvent?.step?.type));
+    console.log(
+      'dropEvent',
+      dropEvent,
+      ['currency', 'restrictions'].includes(dropEvent?.step?.type)
+    );
     let canDrop = true;
 
     if (!dropEvent) {
@@ -85,9 +93,7 @@ export class PaymentChannelComponent
       canDrop = false;
     }
 
-    if (
-      ['RIGHT', 'LEFT'].includes(dropEvent?.position)
-    ) {
+    if (['RIGHT', 'LEFT'].includes(dropEvent?.position)) {
       canDrop = false;
     }
 
@@ -97,22 +103,23 @@ export class PaymentChannelComponent
       });
     }
 
-    if(canDrop) {
-      this.dialog.open(DialogComponent, {
-        data: {
-          type: 'select-many',
-          list: this.paymentChannels,
-          label: 'Payment Channel',
-          title: 'Select Payment Channel',
-        },
+    if (canDrop) {
+      this.dialog
+        .open(DialogComponent, {
+          data: {
+            type: 'select-many',
+            list: this.paymentChannels,
+            label: 'Payment Channel',
+            title: 'Select Payment Channel',
+          },
 
-        hasBackdrop: true,
-        width: '500px',
-      })
-      .afterClosed()
-      .subscribe((result: any) => {
-        this.setData(result);
-      });
+          hasBackdrop: true,
+          width: '500px',
+        })
+        .afterClosed()
+        .subscribe((result: any) => {
+          this.setData(result);
+        });
     }
 
     return canDrop;
@@ -125,7 +132,7 @@ export class PaymentChannelComponent
   setData(result: any): void {
     if (result) {
       this.data.channels = result.map((item: string) => {
-        return { name: item, active: false };
+        return { value: item, isActive: true, key: 'PaymentChannelName' };
       });
       this.nameChanged = true;
       this.store.dispatch(stepUpdated());

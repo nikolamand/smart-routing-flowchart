@@ -109,7 +109,18 @@ export class RestrictionsComponent
       })
       .afterClosed()
       .subscribe((result: any) => {
-        console.log('result', result);
+        if (result) {
+          result = Object.keys(result).map((key) => {
+            return {
+              key,
+              value: result[key],
+              label: key
+                .split(/(?=[A-Z])/)
+                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' '),
+            };
+          }).filter(item => item.value);;
+        }
         this.setRestrictions(result);
         this.store.dispatch(stepUpdated());
       });

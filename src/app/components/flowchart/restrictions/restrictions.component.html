@@ -13,7 +13,7 @@
     <div *ngIf="data?.restrictions">
       <br />
       <div *ngFor="let restriction of data.restrictions">
-        <span class="restriction">{{ restriction.name }}: {{restriction.value}}</span>
+        <span class="restriction">{{ restriction.label }}: {{restriction.value}}</span>
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@
     <div *ngIf="data?.channels">
       <br />
       <div *ngFor="let channel of data.channels">
-        <span class="channel" *ngIf="channel.active === true">{{ channel.name }} </span>
+        <span class="channel" *ngIf="channel.isActive === true">{{ channel.value }} </span>
       </div>
     </div>
   </div>
