@@ -692,17 +692,85 @@
                       "name": "Payment Channel",
                       "channels": {
                         "useLoadBalancing": true,
-                        "LoadBalancingType": "CountPercentage",
+                        "LoadBalancingType": "CardAggregatedCounts",
                         "fields": [
                           {
                             "key": "paymentChannelName",
                             "value": "VISA Visa Sandbox 2",
-                            "isActive": "Active"
+                            "isActive": "Active",
+
+                          "fields": [
+                            {
+                              "key": "SmartRoutingRulePaymentChannelSortOrder",
+                              "value": 3,
+                              "label": "Sort order"
+                            },
+                            {
+                              "key": "HourFrom",
+                              "label": "UTC hour from"
+                            },
+                            {
+                              "key": "HourTo",
+                              "label": "UTC hour to"
+                            },
+                            {
+                              "key": "NumberCaptured",
+                              "label": "Number of captured",
+                              "value": 100
+                            },
+                            {
+                              "key": "NumberDeclined",
+                              "label": "Number of declined"
+                            },
+                            {
+                              "key": "MaxVolume",
+                              "value": 1000.0,
+                              "label": "Max volume"
+                            },
+                            {
+                              "key": "CountPercentage",
+                              "label": "Percentage"
+                            }
+                          ]
                           },
                           {
                             "key": "paymentChannelName2",
                             "value": "VISA Visa Sandbox 2",
-                            "isActive": "Active"
+                            "isActive": "Active",
+                            "fields": [
+                              {
+                                "key": "SmartRoutingRulePaymentChannelSortOrder",
+                                "value": 3,
+                                "label": "Sort order"
+                              },
+                              {
+                                "key": "HourFrom",
+                                "label": "UTC hour from"
+                              },
+                              {
+                                "key": "HourTo",
+                                "label": "UTC hour to"
+                              },
+                              {
+                                "key": "NumberCaptured",
+                                "label": "Number of captured",
+                                "value": 100
+                              },
+                              {
+                                "key": "NumberDeclined",
+                                "label": "Number of declined",
+                                "value": 100
+                              },
+                              {
+                                "key": "MaxVolume",
+                                "value": 1000.0,
+                                "label": "Max volume"
+                              },
+                              {
+                                "key": "CountPercentage",
+                                "label": "Percentage"
+                              }
+                            ]
                           }
                         ]
                       }

@@ -33,7 +33,7 @@ export class PaymentChannelModalComponent implements OnInit{
     }
   }
   getSubField(channel: any, key: any): any {
-    return channel.fields.find(field => field.key === key) || {};
+    return channel.fields?.find(field => field.key === key) || {};
 }
 
   drop(event: CdkDragDrop<string[]>): void {
