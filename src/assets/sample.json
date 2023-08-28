@@ -104,7 +104,7 @@
                 },
                 "children": [
                   {
-                    "type": "payment-channel",
+                    "type": "payment-channels",
                     "data": {
                       "name": "Payment Channels",
                       "channels": {
@@ -360,7 +360,7 @@
                 },
                 "children": [
                   {
-                    "type": "payment-channel",
+                    "type": "payment-channels",
                     "data": {
                       "name": "Payment Channels",
                       "channels": {
@@ -500,7 +500,7 @@
                 },
                 "children": [
                   {
-                    "type": "payment-channel",
+                    "type": "payment-channels",
                     "data": {
                       "name": "Payment Channels",
                       "channels": {
@@ -633,9 +633,9 @@
                 "children": [
                   {
                     "id": "s1688369921481",
-                    "type": "payment-channel",
+                    "type": "payment-channels",
                     "data": {
-                      "type": "payment-channel",
+                      "type": "payment-channels",
                       "name": "Payment Channel",
                       "channels": {
                         "useLoadBalancing": true,
@@ -687,7 +687,7 @@
                 "children": [
                   {
                     "id": "s1687764506959",
-                    "type": "payment-channel",
+                    "type": "payment-channels",
                     "data": {
                       "name": "Payment Channel",
                       "channels": {

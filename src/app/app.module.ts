@@ -23,12 +23,12 @@ import { SmartRoutingComponent } from './components/flowchart/smart-routing/smar
 import { PaymentMethodComponent } from './components/flowchart/payment-method/payment-method.component';
 import { CurrencyComponent } from './components/flowchart/currency/currency.component';
 import { RestrictionsComponent } from './components/flowchart/restrictions/restrictions.component';
-import { PaymentChannelComponent } from './components/flowchart/payment-channel/payment-channel.component';
+import { PaymentChannelComponent } from './components/flowchart/payment-channels/payment-channels.component';
 import { DialogComponent } from './components/flowchart/dialog/dialog.component';
 import { RestrictionsModalComponent } from './components/flowchart/restrictions/restrictions-modal/restrictions-modal.component';
 
 import { flowchartReducer } from './store/flowchart.reducer';
-import { PaymentChannelModalComponent } from './components/flowchart/payment-channel/payment-channel-modal/payment-channel-modal.component';
+import { PaymentChannelModalComponent } from './components/flowchart/payment-channels/payment-channels-modal/payment-channels-modal.component';
 
 @NgModule({
   declarations: [

@@ -69,7 +69,7 @@ export class RestrictionsComponent
     }
 
     if (
-      dropEvent?.step?.type !== 'payment-channel' &&
+      dropEvent?.step?.type !== 'payment-channels' &&
       dropEvent?.position === 'ABOVE'
     ) {
       return false;

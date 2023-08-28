@@ -13,7 +13,7 @@ import { ThemeService } from './services/theme.service';
 import { SmartRoutingComponent } from './components/flowchart/smart-routing/smart-routing.component';
 import { PaymentMethodComponent } from './components/flowchart/payment-method/payment-method.component';
 import { CurrencyComponent } from './components/flowchart/currency/currency.component';
-import { PaymentChannelComponent } from './components/flowchart/payment-channel/payment-channel.component';
+import { PaymentChannelComponent } from './components/flowchart/payment-channels/payment-channels.component';
 import { RestrictionsComponent } from './components/flowchart/restrictions/restrictions.component';
 import { addStep, undo, redo, stepUpdated } from './store/flowchart.actions';
 import { AppState } from './store/flowchart.reducer';
@@ -98,9 +98,9 @@ export class AppComponent {
       paletteName: 'Payment Channel',
       step: {
         template: PaymentChannelComponent,
-        type: 'payment-channel',
+        type: 'payment-channels',
         data: {
-          type: 'payment-channel',
+          type: 'payment-channels',
           name: 'Payment Channel',
         },
       },
@@ -154,7 +154,7 @@ export class AppComponent {
     this.stepRegistry.registerStep('smart-routing', SmartRoutingComponent);
     this.stepRegistry.registerStep('payment-method', PaymentMethodComponent);
     this.stepRegistry.registerStep('currency', CurrencyComponent);
-    this.stepRegistry.registerStep('payment-channel', PaymentChannelComponent);
+    this.stepRegistry.registerStep('payment-channels', PaymentChannelComponent);
     this.stepRegistry.registerStep('restrictions', RestrictionsComponent);
 
     this.onThemeChange({ target: { value: 'light' } });

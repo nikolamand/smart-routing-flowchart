@@ -3,9 +3,9 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
-  selector: 'app-payment-channel-modal',
-  templateUrl: './payment-channel-modal.component.html',
-  styleUrls: ['./payment-channel-modal.component.scss']
+  selector: 'app-payment-channels-modal',
+  templateUrl: './payment-channels-modal.component.html',
+  styleUrls: ['./payment-channels-modal.component.scss']
 })
 export class PaymentChannelModalComponent implements OnInit{
   fields: any[any] = [];

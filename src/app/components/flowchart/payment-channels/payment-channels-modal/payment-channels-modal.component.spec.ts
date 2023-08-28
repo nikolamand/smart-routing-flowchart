@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PaymentChannelModalComponent } from './payment-channel-modal.component';
+import { PaymentChannelModalComponent } from './payment-channels-modal.component';
 
 describe('PaymentChannelModalComponent', () => {
   let component: PaymentChannelModalComponent;

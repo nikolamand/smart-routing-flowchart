@@ -19,12 +19,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { DialogComponent } from '../dialog/dialog.component';
 import { AppState } from 'src/app/store/flowchart.reducer';
 import { stepUpdated } from 'src/app/store/flowchart.actions';
-import { PaymentChannelModalComponent } from './payment-channel-modal/payment-channel-modal.component';
+import { PaymentChannelModalComponent } from './payment-channels-modal/payment-channels-modal.component';
 
 @Component({
-  selector: 'app-payment-channel',
-  templateUrl: './payment-channel.component.html',
-  styleUrls: ['./payment-channel.component.scss'],
+  selector: 'app-payment-channels',
+  templateUrl: './payment-channels.component.html',
+  styleUrls: ['./payment-channels.component.scss'],
 })
 export class PaymentChannelComponent
   extends NgFlowchartStepComponent
