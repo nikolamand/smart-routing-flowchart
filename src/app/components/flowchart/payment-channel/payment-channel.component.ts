@@ -19,6 +19,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { DialogComponent } from '../dialog/dialog.component';
 import { AppState } from 'src/app/store/flowchart.reducer';
 import { stepUpdated } from 'src/app/store/flowchart.actions';
+import { PaymentChannelModalComponent } from './payment-channel-modal/payment-channel-modal.component';
 
 @Component({
   selector: 'app-payment-channel',
@@ -144,5 +145,24 @@ export class PaymentChannelComponent
     setTimeout(() => {
       this.canvas.reRender();
     }, 100);
+  }
+
+  editStep() {
+    console.log('editStep', this.data);
+    this.dialog
+      .open(PaymentChannelModalComponent, {
+        data: {
+          step: this,
+          label: 'Payment Channels',
+          title: 'Edit Payment Channels',
+          data: this.data,
+        },
+
+        hasBackdrop: true,
+        width: '500px',
+      })
+      .afterClosed()
+      .subscribe((result: any) => {
+      });
   }
 }

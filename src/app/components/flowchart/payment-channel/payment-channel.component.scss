@@ -48,6 +48,10 @@
 // }
 .title{
   display: flex;
+
+  .text{
+    text-wrap: nowrap;
+  }
 }
 
 .edit{

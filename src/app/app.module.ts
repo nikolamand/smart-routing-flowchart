@@ -14,8 +14,10 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AppComponent } from './app.component';
 import { SmartRoutingComponent } from './components/flowchart/smart-routing/smart-routing.component';
 import { PaymentMethodComponent } from './components/flowchart/payment-method/payment-method.component';
@@ -26,6 +28,7 @@ import { DialogComponent } from './components/flowchart/dialog/dialog.component'
 import { RestrictionsModalComponent } from './components/flowchart/restrictions/restrictions-modal/restrictions-modal.component';
 
 import { flowchartReducer } from './store/flowchart.reducer';
+import { PaymentChannelModalComponent } from './components/flowchart/payment-channel/payment-channel-modal/payment-channel-modal.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +40,11 @@ import { flowchartReducer } from './store/flowchart.reducer';
     RestrictionsComponent,
     PaymentChannelComponent,
     RestrictionsModalComponent,
+    PaymentChannelModalComponent,
   ],
   imports: [
+    DragDropModule,
+    MatIconModule,
     BrowserModule,
     AppRoutingModule,
     NgFlowchartModule,

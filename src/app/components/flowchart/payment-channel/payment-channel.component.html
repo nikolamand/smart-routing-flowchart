@@ -1,5 +1,13 @@
 <div class="step payment-channel-step" #canvasContent>
-  <span>{{ data.name }}</span>
+  <div class="title">
+    <span class="text">{{ data.name }}</span>
+    <button class="edit-button" (click)="editStep()">
+      <i class="fa-solid fa-pen-to-square"></i>
+    </button>
+    <!-- <button class="delete-button" (click)="deleteStep()">
+      <i class="fa-solid fa-trash-can"></i>
+    </button> -->
+  </div>
 
   <div class="channel-list">
     <div *ngIf="data?.channels?.fields.length > 0">
