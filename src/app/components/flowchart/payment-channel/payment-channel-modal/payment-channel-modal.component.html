@@ -1,51 +1,71 @@
-<div *ngIf="fields.length > 0" cdkDropList (cdkDropListDropped)="drop($event)">
-  <div *ngFor="let channel of fields" cdkDrag>
+<div *ngIf="fields.length > 0" class="modal-container" cdkDropList (cdkDropListDropped)="drop($event)">
+  <div *ngIf="channels.useLoadBalancing === true" class="load-balancing-info">
+    <span>Load balancing type: {{ loadBalancingType }}</span>
+  </div>
+
+  <div *ngFor="let channel of fields" class="channel-item" cdkDrag>
     <!-- Icon for dragging -->
-    <mat-icon>drag_handle</mat-icon>
+    <mat-icon class="drag-icon">drag_handle</mat-icon>
 
     <!-- Channel Name -->
-    <span>{{ channel.value }}</span>
+    <span class="channel-name">{{ channel.value }}</span>
 
-    <!-- Depending on loadBalancingType, show the appropriate input fields -->
-    <div *ngIf="loadBalancingType === 'TimeInterval'">
-      <select [(ngModel)]="channel.HourFrom">
-        <option
-          *ngFor="let hour of [].constructor(24); let i = index"
-          [value]="i"
-        >
-          {{ i }}
-        </option>
-      </select>
-      <select [(ngModel)]="channel.HourTo">
-        <option
-          *ngFor="let hour of [].constructor(24); let i = index"
-          [value]="i"
-        >
-          {{ i }}
-        </option>
-      </select>
-    </div>
+    <div *ngIf="channels.useLoadBalancing === true" class="load-balancing-inputs">
+      <!-- Load Balancing Type -->
+      <!-- Depending on loadBalancingType, show the appropriate input fields -->
+      <div *ngIf="loadBalancingType === 'TimeInterval'" class="time-interval">
+        <select [(ngModel)]="channel.HourFrom">
+          <option
+            *ngFor="let hour of [].constructor(24); let i = index"
+            [value]="i"
+          >
+            {{ i }}
+          </option>
+        </select>
+        <select [(ngModel)]="channel.HourTo">
+          <option
+            *ngFor="let hour of [].constructor(24); let i = index"
+            [value]="i"
+          >
+            {{ i }}
+          </option>
+        </select>
+      </div>
 
-    <div *ngIf="loadBalancingType === 'CardAggregatedCounts'">
-      Number Captured:
-      <input type="text" [(ngModel)]="getSubField(channel, 'NumberCaptured').value" />
-      Number Declined: <input type="text" [(ngModel)]="getSubField(channel, 'NumberDeclined').value" />
-    </div>
+      <div *ngIf="loadBalancingType === 'CardAggregatedCounts'" class="card-aggregated-counts">
+        Number Captured:
+        <input
+          type="text"
+          [(ngModel)]="getSubField(channel, 'NumberCaptured').value"
+        />
+        Number Declined:
+        <input
+          type="text"
+          [(ngModel)]="getSubField(channel, 'NumberDeclined').value"
+        />
+      </div>
 
-    <div *ngIf="loadBalancingType === 'CountPercentage'">
-      Percentage:
-      <input
-        [(ngModel)]="getSubField(channel, 'CountPercentage').value"
-        type="text"
-      />
-    </div>
+      <div *ngIf="loadBalancingType === 'CountPercentage'" class="count-percentage">
+        Percentage:
+        <input
+          [(ngModel)]="getSubField(channel, 'CountPercentage').value"
+          type="text"
+        />
+      </div>
 
-    <div *ngIf="loadBalancingType === 'MaxVolume'">
-      Max Volume: <input type="text" [(ngModel)]="getSubField(channel, 'MaxVolume').value" />
+      <div *ngIf="loadBalancingType === 'MaxVolume'" class="max-volume">
+        Max Volume:
+        <input
+          type="text"
+          [(ngModel)]="getSubField(channel, 'MaxVolume').value"
+        />
+      </div>
     </div>
   </div>
 
   <!-- Cancel & Save buttons -->
-  <button (click)="onCancel()">Cancel</button>
-  <button (click)="onSave()">Save</button>
+  <div class="button-container">
+    <button (click)="onCancel()" class="cancel-btn">Cancel</button>
+    <button (click)="onSave()" class="save-btn">Save</button>
+  </div>
 </div>

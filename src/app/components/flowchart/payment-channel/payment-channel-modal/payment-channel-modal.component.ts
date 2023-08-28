@@ -12,6 +12,7 @@ export class PaymentChannelModalComponent implements OnInit{
   useLoadBalancing: boolean = false;
   loadBalancingType: string | null = null;
   initialData: any = {};
+  channels: any = {};
 
   constructor(
     public dialogRef: MatDialogRef<PaymentChannelModalComponent>,
@@ -22,7 +23,7 @@ export class PaymentChannelModalComponent implements OnInit{
     console.log('data', this.data);
     this.initialData = JSON.parse(JSON.stringify(this.data));
     if(this.data?.data?.channels?.fields?.length > 0){
-      console.log('this.data.data.channels.LoadBalancingType', this.data.data.channels.LoadBalancingType)
+      this.channels = this.data.data.channels;
       this.fields = this.data.data.channels.fields;
       this.useLoadBalancing = !!this.data.data.channels.useLoadBalancing;
       this.loadBalancingType = this.data.data.channels.LoadBalancingType || this.data.data.channels.loadBalancingType;
